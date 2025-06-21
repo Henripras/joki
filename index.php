@@ -1,4 +1,13 @@
+<?php
+# Hapus kalo ini udah ga dipake, buat debug koneksi db
+require_once 'connection.php';
+
+echo '<div style="background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; padding: 10px; margin-bottom: 20px; text-align: center; font-weight: bold;">';
+echo '</div>';
+?>
+
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
