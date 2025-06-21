@@ -1,56 +1,32 @@
--- phpMyAdmin SQL Dump
--- version 4.6.4
--- https://www.phpmyadmin.net/
---
--- Host: 127.0.0.1
--- Generation Time: Jun 14, 2018 at 10:02 AM
--- Server version: 5.7.14
--- PHP Version: 5.6.25
-
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
---
--- Database: `payroll`
---
-CREATE DATABASE IF NOT EXISTS `payroll` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `payroll`;
-
--- --------------------------------------------------------
-
 --
 -- Table structure for table `employee`
 --
-
-CREATE TABLE `employee` (
-  `employee_id` int(5) NOT NULL,
-  `name` varchar(30) NOT NULL,
-  `gender` varchar(30) NOT NULL,
-  `birth_date` varchar(50) DEFAULT NULL,
-  `address` varchar(50) DEFAULT NULL,
-  `city` varchar(50) DEFAULT NULL,
-  `province` varchar(50) DEFAULT NULL,
-  `postal_code` varchar(50) DEFAULT NULL,
-  `email` varchar(50) DEFAULT NULL,
-  `website` varchar(50) DEFAULT NULL,
-  `join_date` varchar(50) DEFAULT NULL,
-  `annual_basic_pay` float NOT NULL,
-  `monthly_pay` float NOT NULL,
-  `tax` float NOT NULL,
-  `tax_amount` float NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+-- Perintah SQL ini membuat tabel 'employee'.
+-- Catatan: 'int(5)' akan otomatis diinterpretasikan sebagai 'INT' oleh PostgreSQL.
+-- 'ENGINE=InnoDB DEFAULT CHARSET=latin1' akan diabaikan oleh PostgreSQL.
+CREATE TABLE employee (
+    employee_id INT NOT NULL,
+    name VARCHAR(30) NOT NULL,
+    gender VARCHAR(30) NOT NULL,
+    birth_date VARCHAR(50) DEFAULT NULL,
+    address VARCHAR(50) DEFAULT NULL,
+    city VARCHAR(50) DEFAULT NULL,
+    province VARCHAR(50) DEFAULT NULL,
+    postal_code VARCHAR(50) DEFAULT NULL,
+    email VARCHAR(50) DEFAULT NULL,
+    website VARCHAR(50) DEFAULT NULL,
+    join_date VARCHAR(50) DEFAULT NULL,
+    annual_basic_pay FLOAT NOT NULL,
+    monthly_pay FLOAT NOT NULL,
+    tax FLOAT NOT NULL,
+    tax_amount FLOAT NOT NULL
+);
 
 --
 -- Dumping data for table `employee`
 --
-
-INSERT INTO `employee` (`employee_id`, `name`, `gender`, `birth_date`, `address`, `city`, `province`, `postal_code`, `email`, `website`, `join_date`, `annual_basic_pay`, `monthly_pay`, `tax`, `tax_amount`) VALUES
+-- Perintah SQL ini memasukkan data awal ke dalam tabel 'employee'.
+INSERT INTO employee (employee_id, name, gender, birth_date, address, city, province, postal_code, email, website, join_date, annual_basic_pay, monthly_pay, tax, tax_amount) VALUES
 (101, 'Andi', 'Male', '1994-09-22', 'Jalan Senopati No .2', 'Bandung', 'Jawa Barat', '2345', 'Andi@gmail.com', 'www.facebook.com', '2017-10-26', 2000000, 11833.3, 29, 21500),
 (102, 'Maharani', 'female', '1994-04-04', 'Kebun Raya', 'Semarang', 'Jawa Tengah', '12453', 'maharani@gmail.com', 'www.facebook.com', '2017-10-26', 3000000, 1675000, 8, 33250),
 (105, 'Guntur', 'male', '1994-09-23', 'Jalan Mangga Dua', 'Jakarta', 'Jakarta', '12651', 'guntur@gmail.co', 'www.snapchat.com', '2017-10-10', 1000000, 6166.67, 26, 10500),
@@ -63,13 +39,6 @@ INSERT INTO `employee` (`employee_id`, `name`, `gender`, `birth_date`, `address`
 --
 -- Indexes for dumped tables
 --
-
---
--- Indexes for table `employee`
---
-ALTER TABLE `employee`
-  ADD PRIMARY KEY (`employee_id`);
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+-- Perintah ini menambahkan Primary Key pada kolom employee_id di tabel 'employee'.
+ALTER TABLE employee
+    ADD PRIMARY KEY (employee_id);
